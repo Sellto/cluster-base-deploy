@@ -25,7 +25,7 @@ kubectl create secret generic -n metallb-system memberlist --from-literal=secret
 
 # VolumeProvisioner
 kubectl apply -f ./namespaces/Longhorn.yaml
-kubectl apply -f --recursive ./longhorn
+kubectl apply --recursive -f ./longhorn
 kubectl patch storageclass longhorn -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 
 #IngressController
