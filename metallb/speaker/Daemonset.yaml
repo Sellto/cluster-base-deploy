@@ -20,6 +20,8 @@ spec:
         app: metallb
         component: speaker
     spec:
+      nodeSelector:
+        side: "cloud"
       containers:
       - args:
         - --port=7472

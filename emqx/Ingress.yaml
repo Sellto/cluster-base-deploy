@@ -1,16 +1,16 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: traefik-ingress
-  namespace: kube-system
+  name: emqx-ingress
+  namespace: default
   annotations:
     kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
-  - host: traefik.artemtec.testbed
+  - host: emqx.viaduct.testbed
     http:
       paths:
       - path: /
         backend:
-          serviceName: traefik-ingress-service
-          servicePort: 8080
+          serviceName: emqx-cluster-headless
+          servicePort: 18083

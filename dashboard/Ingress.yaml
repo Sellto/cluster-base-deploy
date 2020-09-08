@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: dashboard-ingress
+  namespace: kubernetes-dashboard
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    traefik.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  rules:
+  - host: dashboard.viaduct.testbed
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: kubernetes-dashboard
+          servicePort: 443

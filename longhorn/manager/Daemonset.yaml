@@ -14,6 +14,8 @@ spec:
       labels:
         app: longhorn-manager
     spec:
+      nodeSelector:
+        side: "cloud"
       containers:
       - name: longhorn-manager
         image: longhornio/longhorn-manager:v1.0.1

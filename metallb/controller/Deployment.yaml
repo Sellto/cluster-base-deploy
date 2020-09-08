@@ -21,6 +21,8 @@ spec:
         app: metallb
         component: controller
     spec:
+      nodeSelector:
+        side: "cloud"
       containers:
       - args:
         - --port=7472

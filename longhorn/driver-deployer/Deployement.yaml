@@ -13,6 +13,8 @@ spec:
       labels:
         app: longhorn-driver-deployer
     spec:
+      nodeSelector:
+        side: "cloud"
       initContainers:
         - name: wait-longhorn-manager
           image: longhornio/longhorn-manager:v1.0.1

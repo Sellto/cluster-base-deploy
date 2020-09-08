@@ -9,4 +9,4 @@ data:
     - name: default
       protocol: layer2
       addresses:
-      - 10.134.6.21-10.134.6.30
+      - 10.134.8.21-10.134.8.30
